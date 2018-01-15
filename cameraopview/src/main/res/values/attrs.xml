@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CameraOpView">
+        <attr name="pbTime" format="integer"/>
+        <attr name="pbColor" format="color"/>
+    </declare-styleable>
+</resources>
