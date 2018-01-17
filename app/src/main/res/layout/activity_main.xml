@@ -11,7 +11,7 @@
         android:id="@+id/op"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:pbTime="10"
+        app:pbTime="4"
         app:pbColor="#bb8888"
         android:layout_gravity="center_horizontal|bottom" />
 </FrameLayout>
