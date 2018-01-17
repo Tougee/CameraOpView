@@ -21,6 +21,15 @@ A view like Snapchat's home page round button.
 
         })
 ```
+```XML
+<com.touge.cameraopview.CameraOpView
+        android:id="@+id/op"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:pbTime="4"
+        app:pbColor="#bb8888"
+        android:layout_gravity="center_horizontal|bottom" />
+```
 
 ## Setup
 ### Android Studio / Gradle
