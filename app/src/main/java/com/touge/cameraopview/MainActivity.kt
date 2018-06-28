@@ -7,13 +7,14 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.op
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        op.setMaxDuration(5f)
         op.setCameraOpCallback(object : CameraOpView.CameraOpCallback {
             override fun onClick() {
                 toast("onClick")
@@ -24,8 +25,8 @@ class MainActivity : AppCompatActivity() {
                 toast("onProgressStart")
             }
 
-            override fun onProgressStop() {
-                toast("onProgressStop")
+            override fun onProgressStop(duration: Float) {
+                toast("onProgressStop, duration: $duration")
             }
 
         })

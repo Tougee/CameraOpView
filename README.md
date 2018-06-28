@@ -1,34 +1,32 @@
 # CameraOpView
 A view like Snapchat's home page round button.
 
-<img src="art/demo.gif" width="300" height="400">
+<img src="art/demo.gif">
 
 ## Usage
 ```Kotlin
+        op.setMaxDuration(5f)
         op.setCameraOpCallback(object : CameraOpView.CameraOpCallback {
-            override fun onClick() {
-                toast("onClick")
-            }
-
-            override fun onProgressStart() {
-                this@MainActivity.vibrate(longArrayOf(0, 30))
-                toast("onProgressStart")
-            }
-
-            override fun onProgressStop() {
-                toast("onProgressStop")
-            }
-
-        })
+                    override fun onClick() {
+                        toast("onClick")
+                    }
+        
+                    override fun onProgressStart() {
+                        this@MainActivity.vibrate(longArrayOf(0, 30))
+                        toast("onProgressStart")
+                    }
+        
+                    override fun onProgressStop(duration: Float) {
+                        toast("onProgressStop, duration: $duration")
+                    }
+        
+                })
 ```
 ```XML
 <com.touge.cameraopview.CameraOpView
         android:id="@+id/op"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:pbTime="4"
-        app:pbColor="#bb8888"
-        android:layout_gravity="center_horizontal|bottom" />
+        android:layout_height="100dp"/>
 ```
 
 ## Setup
@@ -45,7 +43,7 @@ allprojects {
 Add the dependency:
 ```Gradle
 dependencies {
-    compile 'com.github.tougee:cameraopview:0.0.1'
+    compile 'com.github.tougee:cameraopview:0.0.2'
 }
 ```
 
